@@ -29,7 +29,7 @@ class TikTokApi:
         )
 
         # Get Browser Params
-        print("Kwargs in init: ", **kwargs)
+        print("Kwargs in init: ", kwargs)
         b = browser("newParam", newParams=True, **kwargs)
 
         try:
