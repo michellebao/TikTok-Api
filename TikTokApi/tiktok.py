@@ -382,7 +382,7 @@ class TikTokApi:
             maxCount,
             offset,
         ) = self.__process_kwargs__(kwargs)
-        data = self.getUserObject(username, proxy=proxy)
+        data = self.getUserObject(username, proxy=proxy, **kwargs)
         return self.userPosts(
             data["id"],
             data["secUid"],
@@ -1373,6 +1373,7 @@ class TikTokApi:
 
     # Process the kwargs
     def __process_kwargs__(self, kwargs):
+        print("Kwargs: ", kwargs)
         region = kwargs.get("region", "US")
         language = kwargs.get("language", "en")
         proxy = kwargs.get("proxy", None)
