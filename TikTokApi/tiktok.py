@@ -383,6 +383,7 @@ class TikTokApi:
             maxCount,
             offset,
         ) = self.__process_kwargs__(kwargs)
+        print("Kwargs in byUsername: ", kwargs)
         data = self.getUserObject(username, proxy=proxy, **kwargs)
         return self.userPosts(
             data["id"],
@@ -956,6 +957,7 @@ class TikTokApi:
             maxCount,
             offset,
         ) = self.__process_kwargs__(kwargs)
+        print("Kwargs in getUserObject: ", kwargs)
         return self.getUser(username, **kwargs)["user"]
 
     def getUser(self, username, **kwargs) -> dict:
