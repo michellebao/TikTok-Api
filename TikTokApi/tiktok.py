@@ -78,6 +78,7 @@ class TikTokApi:
         if self.request_delay is not None:
             time.sleep(self.request_delay)
 
+        print(b)
         query = {"verifyFp": b.verifyFp, "did": b.did, "_signature": b.signature}
         url = "{}&{}".format(b.url, urlencode(query))
         r = requests.get(
