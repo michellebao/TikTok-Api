@@ -977,7 +977,6 @@ class TikTokApi:
         api_url = "{}api/user/detail/?{}&{}".format(
             BASE_URL, self.__add_new_params__(), urlencode(query)
         )
-        print("kwargs before browser ", kwargs)
         b = browser(api_url, **kwargs)
         return self.getData(b, proxy=proxy)["userInfo"]
 
