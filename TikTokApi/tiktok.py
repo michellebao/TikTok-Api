@@ -29,7 +29,6 @@ class TikTokApi:
         )
 
         # Get Browser Params
-        print("Kwargs in init: ", kwargs)
         b = browser("newParam", newParams=True, **kwargs)
 
         try:
@@ -79,7 +78,6 @@ class TikTokApi:
         if self.request_delay is not None:
             time.sleep(self.request_delay)
 
-        print("Browser in get data: ", b.__dict__)
         query = {"verifyFp": b.verifyFp, "did": b.did, "_signature": b.signature}
         url = "{}&{}".format(b.url, urlencode(query))
         r = requests.get(
@@ -383,7 +381,6 @@ class TikTokApi:
             maxCount,
             offset,
         ) = self.__process_kwargs__(kwargs)
-        print("Kwargs in byUsername: ", kwargs)
         data = self.getUserObject(username, proxy=proxy, **kwargs)
         return self.userPosts(
             data["id"],
@@ -957,7 +954,6 @@ class TikTokApi:
             maxCount,
             offset,
         ) = self.__process_kwargs__(kwargs)
-        print("Kwargs in getUserObject: ", kwargs)
         return self.getUser(username, **kwargs)["user"]
 
     def getUser(self, username, **kwargs) -> dict:
