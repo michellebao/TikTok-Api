@@ -71,6 +71,8 @@ class browser:
 
         if self.executablePath != None:
             self.options["executablePath"] = self.executablePath
+        else:
+            self.options["executablePath"] = "/usr/lib/chromium-browser/chromium-browser"
 
         if async_support:
             loop = asyncio.new_event_loop()
